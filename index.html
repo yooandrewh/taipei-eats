@@ -59,7 +59,8 @@
   .vbtn{font:inherit;font-size:13px;cursor:pointer;color:var(--sub);
     background:#eef1f5;border:1px solid var(--line);border-radius:8px;padding:6px 10px}
   .vbtn.done{background:#eafaf0;border-color:#bfe6cf;color:var(--good);font-weight:650}
-  .card.visited{opacity:.6}
+  .chip.on{background:#4b5563;border-color:transparent;color:#fff}
+  .card.eaten{opacity:.55}
   .rk{font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
 </style>
 </head>
@@ -80,12 +81,21 @@
     <button id="loc" class="chip locbtn" type="button">&#128205; Use my location</button>
     <span class="locstat" id="locstat"></span>
   </div>
+  <div class="row" style="margin-bottom:8px">
+    <span class="chip" id="hideflag">Hide flagged spots</span>
+  </div>
   <div class="row">
     <select id="sort">
       <option value="dist">Sort: Nearest</option>
       <option value="rating">Sort: Highest rated</option>
       <option value="priceLow">Sort: Cheapest</option>
       <option value="name">Sort: A to Z</option>
+    </select>
+    <select id="cat">
+      <option value="all">All dishes</option>
+    </select>
+    <select id="area">
+      <option value="all">All areas</option>
     </select>
     <select id="maxprice">
       <option value="9999">Any price</option>
@@ -106,10 +116,21 @@
       <option value="2">Within 2 km</option>
       <option value="5">Within 5 km</option>
     </select>
-    <select id="showvisited">
+    <select id="openday">
+      <option value="any">Open any day</option>
+      <option value="today">Open today</option>
+      <option value="Mon">Open Monday</option>
+      <option value="Tue">Open Tuesday</option>
+      <option value="Wed">Open Wednesday</option>
+      <option value="Thu">Open Thursday</option>
+      <option value="Fri">Open Friday</option>
+      <option value="Sat">Open Saturday</option>
+      <option value="Sun">Open Sunday</option>
+    </select>
+    <select id="status">
       <option value="all">All spots</option>
-      <option value="todo">To try</option>
-      <option value="done">Visited</option>
+      <option value="todo">Not eaten</option>
+      <option value="eaten">Eaten</option>
     </select>
     <span class="count" id="count"></span>
   </div>
@@ -123,21 +144,46 @@ const sortSel=document.getElementById('sort');
 const maxP=document.getElementById('maxprice');
 const minR=document.getElementById('minrating');
 const maxD=document.getElementById('maxdist');
-const showV=document.getElementById('showvisited');
+const catSel=document.getElementById('cat');
+const areaSel=document.getElementById('area');
+const openSel=document.getElementById('openday');
+const statusSel=document.getElementById('status');
+const hideFlagChip=document.getElementById('hideflag');
 const countEl=document.getElementById('count');
+let hideFlagged=false;
 
-// ---- visited (saved on this device) ----
-const VKEY='taipei_visited';
-let visited=new Set();
-try{ visited=new Set(JSON.parse(localStorage.getItem(VKEY)||'[]')); }catch(e){}
+// ---- eaten log (saved on this device) ----
+const EKEY='taipei_eaten';
+let eaten=new Set();
+try{ eaten=new Set(JSON.parse(localStorage.getItem(EKEY)||localStorage.getItem('taipei_visited')||'[]')); }catch(e){}
 function vid(d){return d.type+'|'+d.name+'|'+d.zh;}
-function saveVisited(){ try{ localStorage.setItem(VKEY,JSON.stringify([...visited])); }catch(e){} }
+function saveEaten(){ try{ localStorage.setItem(EKEY,JSON.stringify([...eaten])); }catch(e){} }
 list.addEventListener('click',e=>{
   const b=e.target.closest('.vbtn'); if(!b) return;
   const id=b.dataset.id;
-  if(visited.has(id)) visited.delete(id); else visited.add(id);
-  saveVisited(); render();
+  if(eaten.has(id)) eaten.delete(id); else eaten.add(id);
+  saveEaten(); render();
 });
+
+// ---- derived helpers: dish category, district, closed days, flagged ----
+const DISTRICTS=['Gongguan',"Da'an",'Ximending','Xinyi','Zhongshan','Wanhua','Datong','Zhongzheng','Songshan','Shilin','Sanchong'];
+function district(d){ const head=d.area.split('/')[0]; for(const k of DISTRICTS){ if(head.indexOf(k)>=0) return k; } return 'Other'; }
+const DAYABBR=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function closedDays(notes){
+  const set=new Set();
+  const m=notes.match(/Closed ([A-Za-z\/]+)/);
+  if(m){ m[1].split('/').forEach(x=>{ const dd=x.slice(0,3); if(DAYABBR.indexOf(dd)>=0) set.add(dd); }); }
+  if(/Weekdays only/i.test(notes)){ set.add('Sat'); set.add('Sun'); }
+  return set;
+}
+function isFlagged(notes){ return /(SLIPPING|HYGIENE|PRICIER)/.test(notes); }
+DATA.forEach(d=>{ d.district=district(d); d.closed=closedDays(d.notes); d.flagged=isFlagged(d.notes); });
+
+// populate category + area dropdowns from the data
+[...new Set(DATA.map(d=>d.cat))].sort().forEach(c=>{ const o=document.createElement('option'); o.value=c; o.textContent=c; catSel.appendChild(o); });
+[...new Set(DATA.map(d=>d.district))].sort().forEach(a=>{ const o=document.createElement('option'); o.value=a; o.textContent=a; areaSel.appendChild(o); });
+
+hideFlagChip.addEventListener('click',()=>{ hideFlagged=!hideFlagged; hideFlagChip.classList.toggle('on',hideFlagged); render(); });
 const locBtn=document.getElementById('loc');
 const locStat=document.getElementById('locstat');
 const subtitle=document.getElementById('subtitle');
@@ -150,7 +196,7 @@ document.getElementById('types').addEventListener('click',e=>{
   [...document.querySelectorAll('#types .chip')].forEach(x=>x.classList.toggle('active',x===c));
   render();
 });
-[q,sortSel,maxP,minR,maxD,showV].forEach(el=>el.addEventListener('input',render));
+[q,sortSel,maxP,minR,maxD,catSel,areaSel,openSel,statusSel].forEach(el=>el.addEventListener('input',render));
 
 // ---- live location ----
 function haversine(a,b,c,d){
@@ -197,15 +243,21 @@ function distTag(d){
 }
 function render(){
   const term=q.value.trim().toLowerCase();
-  const mp=parseFloat(maxP.value), mr=parseFloat(minR.value), md=parseFloat(maxD.value), sv=showV.value;
+  const mp=parseFloat(maxP.value), mr=parseFloat(minR.value), md=parseFloat(maxD.value);
+  const sv=statusSel.value, cv=catSel.value, av=areaSel.value, ov=openSel.value;
+  const targetDay = ov==='today' ? DAYABBR[new Date().getDay()] : (ov==='any'?null:ov);
   let rows=DATA.filter(d=>{
     if(activeType!=='all' && d.type!==activeType) return false;
+    if(cv!=='all' && d.cat!==cv) return false;
+    if(av!=='all' && d.district!==av) return false;
     if(d.priceLow>mp) return false;
     if(d.rating<mr) return false;
     if(md<9999 && (userPos?d.live:d.dist)>md) return false;
-    const isV=visited.has(vid(d));
+    if(hideFlagged && d.flagged) return false;
+    if(targetDay && d.closed.has(targetDay)) return false;
+    const isV=eaten.has(vid(d));
     if(sv==='todo' && isV) return false;
-    if(sv==='done' && !isV) return false;
+    if(sv==='eaten' && !isV) return false;
     if(term){
       const hay=(d.name+' '+d.zh+' '+d.cat+' '+d.area).toLowerCase();
       if(!hay.includes(term)) return false;
@@ -219,11 +271,11 @@ function render(){
     if(s==='priceLow') return a.priceLow-b.priceLow || b.rating-a.rating;
     if(s==='name') return a.name.localeCompare(b.name);
   });
-  countEl.textContent=rows.length+' places'+(visited.size?' · '+visited.size+' visited':'');
+  countEl.textContent=rows.length+' places'+(eaten.size?' · '+eaten.size+' eaten':'');
   list.innerHTML=rows.map(d=>{
-    const isV=visited.has(vid(d));
+    const isV=eaten.has(vid(d));
     return `
-    <div class="card ${d.type}${isV?' visited':''}" data-t="${d.type}">
+    <div class="card ${d.type}${isV?' eaten':''}" data-t="${d.type}">
       <div class="top">
         <span class="nm">${d.name}</span>
         <span class="zh">${d.zh||''}</span>
@@ -238,7 +290,7 @@ function render(){
       <div class="notes">${flagNotes(d.notes)}</div>
       <div class="foot">
         <a class="map" href="${mapUrl(d)}" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
-        <button class="vbtn${isV?' done':''}" data-id="${vid(d)}">${isV?'✓ Visited':'Mark visited'}</button>
+        <button class="vbtn${isV?' done':''}" data-id="${vid(d)}">${isV?'✓ Eaten':'Mark eaten'}</button>
       </div>
     </div>`;}).join('');
 }
