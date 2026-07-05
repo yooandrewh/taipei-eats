@@ -1,0 +1,681 @@
+[
+{
+"name": "Long Hao Shi",
+"zh": "籠好食",
+"area": "Wanhua (Xining Rd)",
+"cat": "Dumplings",
+"rating": 4.9
+},
+{
+"name": "Xin Taiwan G King",
+"zh": "新台灣G王",
+"area": "Da'an (Tonghua) / MRT Xinyi Anhe",
+"cat": "Fried Chicken",
+"rating": 4.8
+},
+{
+"name": "Chao Zhuan Mian Fu",
+"zh": "潮饌麵府",
+"area": "Xinyi (Wuxing St)",
+"cat": "Noodle",
+"rating": 4.8
+},
+{
+"name": "Congee Full of Treasure",
+"zh": "寶粥館",
+"area": "Zhongshan / MRT Zhongshan",
+"cat": "Congee",
+"rating": 4.8
+},
+{
+"name": "Lao Xian Jue Mala Hotpot",
+"zh": "老先覺麻辣鍋",
+"area": "Zhongshan / MRT Zhongshan Jr High",
+"cat": "Mala Hotpot (AYCE)",
+"rating": 4.8
+},
+{
+"name": "Xiong Da Beef Noodle",
+"zh": "雄大牛肉麵",
+"area": "Gongguan (Lane 283)",
+"cat": "Beef Noodle",
+"rating": 4.7
+},
+{
+"name": "Zheng Wu Beef Noodle",
+"zh": "政武牛肉麵",
+"area": "Da'an (Da'an Rd)",
+"cat": "Beef Noodle",
+"rating": 4.7
+},
+{
+"name": "Fu Ding Claypot Congee",
+"zh": "富鼎砂鍋粥",
+"area": "Zhongshan / MRT Zhongshan",
+"cat": "Congee",
+"rating": 4.7
+},
+{
+"name": "Zheng Jiao Zhan",
+"zh": "蒸餃棧",
+"area": "Wanhua (Hankou St)",
+"cat": "Dumplings",
+"rating": 4.7
+},
+{
+"name": "Mei Zhen Doujiang",
+"zh": "美珍豆漿",
+"area": "Datong / MRT Yuanshan",
+"cat": "Breakfast",
+"rating": 4.7
+},
+{
+"name": "Dong Yue Fuzhou Dry Noodle",
+"zh": "東越河粉福州乾麵",
+"area": "Gongguan (Wenzhou St L74)",
+"cat": "Rice Noodle",
+"rating": 4.6
+},
+{
+"name": "Tai Da Malatang (Xiao Jie Jie)",
+"zh": "小姐姐麻辣食堂",
+"area": "Da'an / MRT Technology Bldg",
+"cat": "Malatang",
+"rating": 4.6
+},
+{
+"name": "Shi San Wan Handmade Mee Sua",
+"zh": "食三碗手工麵線",
+"area": "Da'an (Da'an Rd)",
+"cat": "Mee Sua",
+"rating": 4.6
+},
+{
+"name": "Bade Ginger Duck",
+"zh": "鴨味仔薑母鴨 八德",
+"area": "Zhongshan / MRT Zhongxiao Xinsheng",
+"cat": "Ginger Duck Hotpot",
+"rating": 4.6
+},
+{
+"name": "Hong Deng Rong Noodle",
+"zh": "紅燈榮麵舖",
+"area": "Da'an (Yanji St)",
+"cat": "Noodle",
+"rating": 4.6
+},
+{
+"name": "Tang Bao Le",
+"zh": "湯包樂",
+"area": "Wanhua (Kunming St)",
+"cat": "Dumplings",
+"rating": 4.6
+},
+{
+"name": "Bandao (Peninsula) Beef Noodle",
+"zh": "半島牛肉麵",
+"area": "Xinyi / MRT Houshanpi",
+"cat": "Beef Noodle",
+"rating": 4.6
+},
+{
+"name": "Lee Chi Oyster Omelet",
+"zh": "賴記蚵仔煎",
+"area": "Songshan (Raohe) / MRT Songshan",
+"cat": "Oyster Omelette",
+"rating": 4.6
+},
+{
+"name": "59 Noodle Specialty",
+"zh": "59麵疙瘩",
+"area": "Gongguan (Alley 4 Lane 286)",
+"cat": "Noodle",
+"rating": 4.5
+},
+{
+"name": "Veggie Steamed Stinky Tofu",
+"zh": "素食蒸臭豆腐",
+"area": "Gongguan (Lane 244)",
+"cat": "Stinky Tofu (Veg)",
+"rating": 4.5
+},
+{
+"name": "Like Tofu",
+"zh": "來呹豆腐",
+"area": "Da'an (Linjiang) / MRT Xinyi Anhe",
+"cat": "Stinky Tofu (Veg)",
+"rating": 4.5
+},
+{
+"name": "Liu Tang Bao",
+"zh": "劉湯包",
+"area": "Wanhua (Neijiang St)",
+"cat": "Dumplings",
+"rating": 4.5
+},
+{
+"name": "Mian Xian Town",
+"zh": "麵線町",
+"area": "Datong / MRT Zhongshan",
+"cat": "Mee Sua",
+"rating": 4.5
+},
+{
+"name": "Din Tai Fung (Xinyi Original)",
+"zh": "鼎泰豐 信義本店",
+"area": "Da'an / MRT Dongmen",
+"cat": "Xiao Long Bao",
+"rating": 4.4
+},
+{
+"name": "Yu Pin Yuan Iced Tangyuan",
+"zh": "御品元冰火湯圓",
+"area": "Da'an (Tonghua) / MRT Xinyi Anhe",
+"cat": "Dessert (Tangyuan)",
+"rating": 4.4
+},
+{
+"name": "Shao Ou Chao Shou",
+"zh": "燒喔！抄手麵食館",
+"area": "Da'an / MRT Zhongxiao Fuxing",
+"cat": "Noodle / Wonton",
+"rating": 4.4
+},
+{
+"name": "A Cheng Goose",
+"zh": "阿城鵝肉",
+"area": "Zhongshan / MRT Songjiang Nanjing",
+"cat": "Smoked Goose",
+"rating": 4.4
+},
+{
+"name": "Jipin Fried Dumpling",
+"zh": "済品鍋貼",
+"area": "Shilin / MRT Zhishan",
+"cat": "Dumplings",
+"rating": 4.4
+},
+{
+"name": "Takumi Dumplings",
+"zh": "巧之味手工水餃",
+"area": "Zhongzheng / MRT Shandao Temple",
+"cat": "Dumplings",
+"rating": 4.3
+},
+{
+"name": "Nanjichang Night Market",
+"zh": "南機場夜市",
+"area": "Zhongzheng",
+"cat": "Night Market",
+"rating": 4.3
+},
+{
+"name": "Sihai Soy Milk",
+"zh": "四海豆漿",
+"area": "Datong / MRT Zhongshan",
+"cat": "Breakfast",
+"rating": 4.3
+},
+{
+"name": "Sinchao Rice Shoppe",
+"zh": "新潮飯店",
+"area": "Xinyi / MRT Taipei City Hall",
+"cat": "Modern Taiwanese",
+"rating": 4.3
+},
+{
+"name": "Raohe Street Night Market",
+"zh": "饒河街觀光夜市",
+"area": "Songshan / MRT Songshan",
+"cat": "Night Market",
+"rating": 4.3
+},
+{
+"name": "Jin Da Lu Rou Fan",
+"zh": "今大魯肉飯",
+"area": "New Taipei Sanchong / MRT Cailiao",
+"cat": "Lu Rou Fan",
+"rating": 4.3
+},
+{
+"name": "Taiwan Fried Chicken HQ",
+"zh": "台灣鹽酥雞大直創始總店",
+"area": "Zhongshan / MRT Dazhi",
+"cat": "Fried Chicken",
+"rating": 4.3
+},
+{
+"name": "Ding Hao Zi Lin",
+"zh": "頂好紫琳蒸餃館",
+"area": "Da'an / MRT Zhongxiao Fuxing",
+"cat": "Dumplings",
+"rating": 4.2
+},
+{
+"name": "Taiwan Beef Noodles Chicken Soup",
+"zh": "台灣牛肉麵",
+"area": "Da'an (Dunhua S Rd)",
+"cat": "Beef Noodle",
+"rating": 4.2
+},
+{
+"name": "Shi Er Yue Congee",
+"zh": "十二月粥品",
+"area": "Da'an / MRT Zhongxiao Dunhua",
+"cat": "Congee",
+"rating": 4.2
+},
+{
+"name": "Dong Yi Pork Chop",
+"zh": "東一排骨",
+"area": "Zhongzheng / MRT Ximen",
+"cat": "Pork Chop Rice",
+"rating": 4.2
+},
+{
+"name": "Chen Ji Intestine Mee Sua",
+"zh": "陳記腸蚵專業麵線",
+"area": "Wanhua / MRT Longshan Temple",
+"cat": "Mee Sua",
+"rating": 4.2
+},
+{
+"name": "Fuhong Beef Noodles",
+"zh": "福宏牛肉麵",
+"area": "Wanhua / MRT Ximen",
+"cat": "Beef Noodle",
+"rating": 4.2
+},
+{
+"name": "Guangzhou St Crispy Oyster Omelette",
+"zh": "廣州街脆皮蚵仔煎",
+"area": "Wanhua / MRT Longshan Temple",
+"cat": "Oyster Omelette",
+"rating": 4.2
+},
+{
+"name": "Master Spicy Noodle",
+"zh": "天下三絕",
+"area": "Zhongshan / MRT Minquan W Rd",
+"cat": "Spicy Noodle",
+"rating": 4.2
+},
+{
+"name": "Kyoto Xiaoguan",
+"zh": "京鼎小館",
+"area": "Songshan / MRT Nanjing Fuxing",
+"cat": "Dumplings",
+"rating": 4.2
+},
+{
+"name": "Ningxia Night Market",
+"zh": "寧夏夜市",
+"area": "Datong / MRT Shuanglian",
+"cat": "Night Market",
+"rating": 4.2
+},
+{
+"name": "Daquan Goose",
+"zh": "大全鵝肉",
+"area": "Songshan / MRT Nanjing Sanmin",
+"cat": "Goose",
+"rating": 4.2
+},
+{
+"name": "Huang Ji Braised Pork",
+"zh": "黃記魯肉飯",
+"area": "Zhongshan / MRT Yuanshan",
+"cat": "Lu Rou Fan",
+"rating": 4.2
+},
+{
+"name": "Gongguan Night Market",
+"zh": "公館夜市",
+"area": "Gongguan / MRT Gongguan",
+"cat": "Night Market",
+"rating": 4.1
+},
+{
+"name": "Yong He Soya Milk King",
+"zh": "永和豆漿大王",
+"area": "Da'an / MRT Daan",
+"cat": "Breakfast",
+"rating": 4.1
+},
+{
+"name": "Linjiang (Tonghua) Night Market",
+"zh": "臨江街觀光夜市",
+"area": "Da'an / MRT Xinyi Anhe",
+"cat": "Night Market",
+"rating": 4.1
+},
+{
+"name": "Fu Hang Soy Milk",
+"zh": "阜杭豆漿",
+"area": "Zhongzheng / MRT Shandao Temple",
+"cat": "Breakfast",
+"rating": 4.1
+},
+{
+"name": "1976 Cantonese Congee",
+"zh": "1976道地香港美食",
+"area": "Da'an / MRT Zhongxiao Dunhua",
+"cat": "Congee / Cantonese",
+"rating": 4.1
+},
+{
+"name": "Ay-Chung Flour-Rice Noodle",
+"zh": "阿宗麵線",
+"area": "Ximending / MRT Ximen",
+"cat": "Mee Sua",
+"rating": 4.1
+},
+{
+"name": "Tian Tian Li",
+"zh": "天天利美食坊",
+"area": "Ximending / MRT Ximen",
+"cat": "Lu Rou Fan",
+"rating": 4.1
+},
+{
+"name": "Wang's Broth (Xiao Wang)",
+"zh": "小王煮瓜",
+"area": "Wanhua / MRT Longshan Temple",
+"cat": "Braised Pork Rice",
+"rating": 4.1
+},
+{
+"name": "Pang Lao Ban Pork Congee",
+"zh": "胖老闆誠意肉粥",
+"area": "Zhongshan / MRT Songjiang Nanjing",
+"cat": "Congee",
+"rating": 4.1
+},
+{
+"name": "Chef Hung Beef Noodle",
+"zh": "洪師父牛肉麵",
+"area": "Zhongshan / MRT Songjiang Nanjing",
+"cat": "Beef Noodle",
+"rating": 4.1
+},
+{
+"name": "Dong Yin Late-Night Eats",
+"zh": "東引小吃店",
+"area": "Songshan / MRT Nanjing Sanmin",
+"cat": "Beef Noodle / Late Night",
+"rating": 4.1
+},
+{
+"name": "Lan Jia Gua Bao",
+"zh": "藍家割包",
+"area": "Gongguan / MRT Gongguan",
+"cat": "Gua Bao",
+"rating": 4.0
+},
+{
+"name": "Ruian Soy Milk",
+"zh": "瑞安豆漿",
+"area": "Da'an / MRT Daan",
+"cat": "Breakfast",
+"rating": 4.0
+},
+{
+"name": "Chou Lao Ban Steamed Stinky Tofu",
+"zh": "臭老闆現蒸臭豆腐",
+"area": "Zhongzheng (Nanjichang)",
+"cat": "Stinky Tofu (Veg)",
+"rating": 4.0
+},
+{
+"name": "Liu Shandong Beef Noodle",
+"zh": "劉山東牛肉麵",
+"area": "Zhongzheng / MRT Taipei Main",
+"cat": "Beef Noodle",
+"rating": 4.0
+},
+{
+"name": "Lao Shandong Homemade Noodles",
+"zh": "老山東牛肉家常麵",
+"area": "Ximending / MRT Ximen",
+"cat": "Beef Noodle",
+"rating": 4.0
+},
+{
+"name": "Shilin Night Market",
+"zh": "士林夜市",
+"area": "Shilin / MRT Jiantan",
+"cat": "Night Market",
+"rating": 4.0
+},
+{
+"name": "Hang Zhou Xiao Long Bao",
+"zh": "杭州小籠湯包",
+"area": "Zhongzheng / MRT CKS Memorial",
+"cat": "Dumplings",
+"rating": 3.8
+},
+{
+"name": "Lin Dong Fang Beef Noodle",
+"zh": "林東芳牛肉麵",
+"area": "Zhongshan / MRT Zhongxiao Fuxing",
+"cat": "Beef Noodle",
+"rating": 3.8
+},
+{
+"name": "Yong Kang Beef Noodle",
+"zh": "永康牛肉麵",
+"area": "Da'an / MRT Dongmen",
+"cat": "Beef Noodle",
+"rating": 3.7
+},
+{
+"name": "Jin Feng Braised Pork Rice",
+"zh": "金峰魯肉飯",
+"area": "Zhongzheng / MRT CKS Memorial",
+"cat": "Lu Rou Fan",
+"rating": 3.7
+},
+{
+"name": "Fuzhou Shizu Pepper Bun",
+"zh": "福州世祖胡椒餅",
+"area": "Songshan (Raohe) / MRT Songshan",
+"cat": "Pepper Bun",
+"rating": 3.7
+},
+{
+"name": "A-Ying Braised Pork Rice",
+"zh": "阿英滷肉飯",
+"area": "Gongguan (Wenzhou St)",
+"cat": "Lu Rou Fan",
+"rating": 3.6
+},
+{
+"name": "Tian Jin Onion Pancake",
+"zh": "天津蔥抓餅",
+"area": "Da'an / MRT Dongmen",
+"cat": "Scallion Pancake",
+"rating": 3.6
+},
+{
+"name": "Lai Ji Oyster Omelette",
+"zh": "賴記雞蛋蚵仔煎",
+"area": "Datong / MRT Daqiaotou",
+"cat": "Oyster Omelette",
+"rating": 3.5
+},
+{
+"name": "Dongfahao (Raohe Mee Sua)",
+"zh": "東發號",
+"area": "Songshan (Raohe) / MRT Songshan",
+"cat": "Mee Sua",
+"rating": 3.5
+},
+{
+"name": "Hot-Star Large Fried Chicken",
+"zh": "豪大大雞排",
+"area": "Shilin / MRT Jiantan",
+"cat": "Fried Chicken",
+"rating": 3.5
+},
+{
+"name": "Liu's Pan-Fried Buns",
+"zh": "劉家水煎包",
+"area": "Gongguan (Tingzhou Rd)",
+"cat": "Pan-fried Buns",
+"rating": 3.4
+},
+{
+"name": "Shao Ou Chao Shou",
+"zh": "燒喔！抄手",
+"area": "Da'an / MRT Zhongxiao Fuxing",
+"cat": "Wonton Noodle",
+"rating": 4.4
+},
+{
+"name": "Grandma's Bear Thai Tea",
+"zh": "奶奶的熊 手沖泰式奶茶",
+"area": "Gongguan (Ln 90) / MRT Gongguan",
+"cat": "Thai Milk Tea",
+"rating": 5.0
+},
+{
+"name": "Douhua Sen",
+"zh": "豆花森",
+"area": "Xinyi (Wuxing St) / MRT Taipei 101",
+"cat": "Douhua (Tofu Pudding)",
+"rating": 4.9
+},
+{
+"name": "Caomei Dafu (Strawberry Mochi)",
+"zh": "草莓大福",
+"area": "Ximending / MRT Ximen",
+"cat": "Fruit Mochi",
+"rating": 4.9
+},
+{
+"name": "Humanity Desserts",
+"zh": "人性",
+"area": "Gongguan (Lane 316) / MRT Gongguan",
+"cat": "Boba Dessert",
+"rating": 4.8
+},
+{
+"name": "MTB Modern Tea Bank",
+"zh": "米堤銀行 鮮乳茶",
+"area": "Da'an (Fuxing S Rd) / MRT Daan",
+"cat": "Fresh Milk Tea",
+"rating": 4.8
+},
+{
+"name": "KURE8 Kombucha",
+"zh": "8酵茶",
+"area": "Da'an (Fuxing S Rd) / MRT Daan",
+"cat": "Kombucha Tea",
+"rating": 4.8
+},
+{
+"name": "SnowMie",
+"zh": "綿雪",
+"area": "Shilin / MRT Zhishan",
+"cat": "Shaved Ice / Douhua",
+"rating": 4.8
+},
+{
+"name": "WooYo Tea",
+"zh": "五窨茶",
+"area": "Da'an (Xinyi Rd) / MRT Dongmen",
+"cat": "Specialty Milk Tea",
+"rating": 4.7
+},
+{
+"name": "Wangtea Lab",
+"zh": "當代茶吧",
+"area": "Datong (Dadaocheng) / MRT Daqiaotou",
+"cat": "Modern Tea Bar",
+"rating": 4.7
+},
+{
+"name": "Nap Tea (Ningxia)",
+"zh": "再睡5分鐘",
+"area": "Datong (Ningxia) / MRT Shuanglian",
+"cat": "Milk-Cap Boba",
+"rating": 4.7
+},
+{
+"name": "Mr. Chef Snow & Tofu",
+"zh": "雪佛",
+"area": "Gongguan (Lane 244) / MRT Gongguan",
+"cat": "Shaved Ice / Boba",
+"rating": 4.6
+},
+{
+"name": "A Fu Douhua",
+"zh": "阿富豆花",
+"area": "Da'an (Ruian St) / MRT Technology Bldg",
+"cat": "Douhua (Tofu Pudding)",
+"rating": 4.6
+},
+{
+"name": "Beimen Fengli Ice",
+"zh": "北門鳳李冰",
+"area": "Da'an (Zhongxiao E) / MRT Zhongxiao Dunhua",
+"cat": "Taiwanese Ice Cream",
+"rating": 4.6
+},
+{
+"name": "Xing Fu Tang",
+"zh": "幸福堂",
+"area": "Ximending / MRT Ximen",
+"cat": "Brown Sugar Boba",
+"rating": 4.6
+},
+{
+"name": "Happy Lemon Gongguan",
+"zh": "快樂檸檬",
+"area": "Gongguan (Lane 24) / MRT Gongguan",
+"cat": "Boba / Egg Waffle",
+"rating": 4.5
+},
+{
+"name": "YONSHIN Milk Tea Mansion",
+"zh": "榕欣 奶茶殿",
+"area": "Xinyi / MRT Taipei City Hall",
+"cat": "Milk Tea / Taiwanese",
+"rating": 4.5
+},
+{
+"name": "Ba Bo Q Nai",
+"zh": "巴伯Q奶",
+"area": "Gongguan (Lane 316) / MRT Gongguan",
+"cat": "Brown Sugar Boba",
+"rating": 4.4
+},
+{
+"name": "ODD ONE OUT",
+"zh": "ODD ONE OUT",
+"area": "Da'an (Dunhua S) / MRT Xinyi Anhe",
+"cat": "Specialty Boba",
+"rating": 4.4
+},
+{
+"name": "Thai Like Tea",
+"zh": "泰讚了",
+"area": "Gongguan (Lane 286) / MRT Gongguan",
+"cat": "Thai Milk Tea",
+"rating": 4.3
+},
+{
+"name": "Beans Village",
+"zh": "豆花莊",
+"area": "Datong (Ningxia) / MRT Shuanglian",
+"cat": "Douhua (Tofu Pudding)",
+"rating": 4.2
+},
+{
+"name": "Dejeng Oolong Tea",
+"zh": "得正",
+"area": "Gongguan (Lane 316) / MRT Gongguan",
+"cat": "Oolong Milk Tea",
+"rating": 3.9
+}
+]
