@@ -67,15 +67,32 @@
     border:1px solid var(--line);border-radius:7px;padding:2px 7px;white-space:nowrap}
   .rknum{margin-left:auto;font-weight:800;font-size:17px;color:var(--accent);
     background:#fff3ef;border:1px solid #f6c9ba;border-radius:9px;padding:2px 10px;white-space:nowrap}
+  .pbtn{font:inherit;font-size:13px;cursor:pointer;color:#fff;background:var(--accent);
+    border:1px solid transparent;border-radius:8px;padding:6px 10px}
+  .pweek{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0}
+  .pwt{font-weight:700;font-size:15px;margin-bottom:8px}
+  .prow{display:flex;align-items:center;gap:6px;padding:5px 0;border-top:1px solid var(--line)}
+  .pd{width:38px;font-size:12px;color:var(--sub);font-weight:600;flex:none}
+  .pcell{flex:1;min-width:0;font-size:11.5px;background:#f0f2f5;border:1px dashed var(--line);
+    border-radius:8px;padding:6px;cursor:pointer;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--sub)}
+  .pcell.filled{background:#eafaf0;border:1px solid #bfe6cf;color:var(--ink)}
+  .pcell .pw{color:#b45309;font-weight:700}
+  .pbudget{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;font-size:14px}
+  .pbudget b{font-size:17px}
+  .pbudget input{width:90px;background:#f0f2f5;border:1px solid var(--line);border-radius:8px;
+    padding:5px 8px;font:inherit;color:var(--ink)}
+  .over{color:#c0392b;font-weight:700}
+  .under{color:var(--good);font-weight:700}
 </style>
 </head>
 <body>
 <header>
-  <h1>Taipei Eats <span style="font-size:11px;font-weight:400;color:var(--sub)">v12 · Jul 5</span></h1>
+  <h1>Taipei Eats <span style="font-size:11px;font-weight:400;color:var(--sub)">v13 · Jul 5</span></h1>
   <div class="sub" id="subtitle">Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.</div>
   <div class="row" style="margin-bottom:8px" id="views">
     <span class="chip active" data-view="browse">All spots</span>
     <span class="chip" data-view="alltime">&#127942; All-time best</span>
+    <span class="chip" data-view="plan">&#128197; Plan</span>
   </div>
   <div class="row" style="margin-bottom:8px">
     <input id="q" type="search" placeholder="Search name, dish, area (English or Chinese)">
@@ -204,12 +221,93 @@ const spicyChip=document.getElementById('spicyonly');
 let spicyOnly=false;
 spicyChip.addEventListener('click',()=>{ spicyOnly=!spicyOnly; spicyChip.classList.toggle('on',spicyOnly); render(); });
 
+// ---- meal planner (saved on this device) ----
+const PKEY='taipei_plan', BKEY='taipei_budget_target';
+let plan={}; try{ plan=JSON.parse(localStorage.getItem(PKEY)||'{}'); }catch(e){}
+let budgetTarget=parseInt(localStorage.getItem(BKEY)||'0')||0;
+let assignSlot=null;                       // slot id currently being filled
+const BYZH={}; DATA.forEach(d=>{ if(!BYZH[d.zh]) BYZH[d.zh]=d; });
+const MEALS=[['L','Lunch'],['A','Afternoon'],['D','Dinner']];
+const PDAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+function savePlan(){ try{ localStorage.setItem(PKEY,JSON.stringify(plan)); }catch(e){} }
+function slotLabel(id){ const [w,day,m]=id.split('-'); return w.toUpperCase()+' '+day+' '+MEALS.find(x=>x[0]===m)[1]; }
+function priceRange(d){ const m=d.price.match(/(\d+)\s*-\s*(\d+)/); return m?[+m[1],+m[2]]:[d.priceLow,d.priceLow]; }
+function mealWarn(d,m){
+  const n=d.notes;
+  if(m!=='D' && /dinner only|opens [6-9]pm|evenings? only|from 3:30pm|17:[0-5]\d-|18:00-/i.test(n) && !/24h|11:|12:|10:/i.test(n)) return 'evening-only';
+  if(m==='D' && /mornings only|mornings\.|05:\d\d-1[01]|06:00-1[0-4]:|08:00-12/i.test(n) && !/24h/.test(n)) return 'morning-only';
+  return null;
+}
+function renderPlan(){
+  subtitle.textContent='Tap an empty slot, then pick a place from the list. Tap a filled slot to remove it.';
+  let lo=0,hi=0,count=0,weekTot={w1:[0,0],w2:[0,0]};
+  for(const [id,zh] of Object.entries(plan)){
+    const d=BYZH[zh]; if(!d) continue;
+    const [a,b]=priceRange(d); lo+=a; hi+=b; count++;
+    const w=id.split('-')[0]; weekTot[w][0]+=a; weekTot[w][1]+=b;
+  }
+  const tgt=budgetTarget?`<span class="${hi>budgetTarget?'over':'under'}">${hi>budgetTarget?'over':'within'} target</span>`:'';
+  let out=`<div class="pbudget">
+    <div><b>NT$${lo.toLocaleString()}&ndash;${hi.toLocaleString()}</b> total &middot; ${count} meal${count===1?'':'s'} planned ${tgt}</div>
+    <div style="margin-top:6px;color:var(--sub);font-size:12.5px">Week 1: NT$${weekTot.w1[0]}&ndash;${weekTot.w1[1]} &middot; Week 2: NT$${weekTot.w2[0]}&ndash;${weekTot.w2[1]}</div>
+    <div style="margin-top:8px">Budget target: NT$ <input id="btarget" type="number" inputmode="numeric" value="${budgetTarget||''}" placeholder="none"></div>
+  </div>`;
+  for(const w of ['w1','w2']){
+    out+=`<div class="pweek"><div class="pwt">Week ${w[1]} ${w==='w1'?'(lunches)':'(dinners)'}</div>`;
+    for(const day of PDAYS){
+      out+=`<div class="prow"><span class="pd">${day}</span>`;
+      for(const [m,mn] of MEALS){
+        const id=`${w}-${day}-${m}`, zh=plan[id], d=zh&&BYZH[zh];
+        if(d){
+          const closed=d.closed && d.closed.has(day);
+          const mw=mealWarn(d,m);
+          const warn=(closed?'<span class="pw" title="closed this day">&#9888; closed '+day+'</span> ':'')+(mw?'<span class="pw">&#9888; '+mw+'</span> ':'');
+          out+=`<span class="pcell filled" data-slot="${id}">${warn}${d.name} &middot; NT$${d.price}</span>`;
+        } else {
+          out+=`<span class="pcell" data-slot="${id}">${mn.slice(0,1)}: +</span>`;
+        }
+      }
+      out+='</div>';
+    }
+    out+='</div>';
+  }
+  countEl.textContent=count+' meals planned';
+  list.innerHTML=out;
+  const bt=document.getElementById('btarget');
+  bt.addEventListener('change',()=>{ budgetTarget=parseInt(bt.value)||0;
+    try{ localStorage.setItem(BKEY,String(budgetTarget)); }catch(e){} renderPlan(); });
+}
+list.addEventListener('click',e=>{
+  const cell=e.target.closest('.pcell');
+  if(cell){
+    const id=cell.dataset.slot;
+    if(plan[id]){
+      const d=BYZH[plan[id]];
+      if(confirm('Remove '+(d?d.name:'this place')+' from '+slotLabel(id)+'?')){ delete plan[id]; savePlan(); renderPlan(); }
+    } else {
+      assignSlot=id; view='browse';
+      [...document.querySelectorAll('#views .chip')].forEach(x=>x.classList.toggle('active',x.dataset.view==='browse'));
+      render();
+    }
+    return;
+  }
+  const pb=e.target.closest('.pbtn');
+  if(pb){
+    plan[assignSlot]=pb.dataset.zh; savePlan();
+    assignSlot=null; view='plan';
+    [...document.querySelectorAll('#views .chip')].forEach(x=>x.classList.toggle('active',x.dataset.view==='plan'));
+    renderPlan();
+    return;
+  }
+});
+
 let view='browse';
 let browsePrice=null;   // remembers the budget cap while in the all-time view
 maxP.addEventListener('change',()=>{ if(view==='alltime') browsePrice=null; }); // user overrode it there
 document.getElementById('views').addEventListener('click',e=>{
   const c=e.target.closest('.chip'); if(!c) return;
   view=c.dataset.view;
+  assignSlot=null;   // switching views cancels an in-progress slot assignment
   [...document.querySelectorAll('#views .chip')].forEach(x=>x.classList.toggle('active',x===c));
   if(view==='alltime'){
     sortSel.value='grank';
@@ -281,6 +379,7 @@ function distTag(d){
   return '<span class="tag">'+d.dist+' km &middot; '+d.travel+'</span>';
 }
 function render(){
+  if(view==='plan'){ renderPlan(); return; }
   const term=q.value.trim().toLowerCase();
   const mp=parseFloat(maxP.value), mr=parseFloat(minR.value), md=parseFloat(maxD.value);
   const sv=statusSel.value, cv=catSel.value, av=areaSel.value, ov=openSel.value;
@@ -309,9 +408,11 @@ function render(){
     rows=rows.filter(d=>{ if(!d.grank || seen.has(d.zh)) return false; seen.add(d.zh); return true; });
     subtitle.textContent='Top 100 all-time — only places with verified acclaim (guides, Reddit, Michelin, large review counts) get a rank. Filters and sorting still apply.';
   } else {
-    subtitle.textContent = userPos
-      ? 'Sorted by how close each spot is to you right now. Distances are approximate straight-line.'
-      : 'Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.';
+    subtitle.textContent = assignSlot
+      ? 'Picking a place for '+slotLabel(assignSlot)+' — tap "Add here" on a card (or tap 📅 Plan to cancel).'
+      : (userPos
+        ? 'Sorted by how close each spot is to you right now. Distances are approximate straight-line.'
+        : 'Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.');
   }
   const s=sortSel.value;
   rows.sort((a,b)=>{
@@ -355,6 +456,7 @@ function render(){
       <div class="foot">
         <a class="map" href="${mapUrl(d)}" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
         <button class="vbtn${isV?' done':''}" data-id="${vid(d)}">${isV?'✓ Eaten':'Mark eaten'}</button>
+        ${assignSlot?`<button class="pbtn" data-zh="${d.zh}">Add here</button>`:''}
       </div>
     </div>`;}).join('');
 }
