@@ -71,7 +71,7 @@
 </head>
 <body>
 <header>
-  <h1>Taipei Eats <span style="font-size:11px;font-weight:400;color:var(--sub)">v11 · Jul 5</span></h1>
+  <h1>Taipei Eats <span style="font-size:11px;font-weight:400;color:var(--sub)">v12 · Jul 5</span></h1>
   <div class="sub" id="subtitle">Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.</div>
   <div class="row" style="margin-bottom:8px" id="views">
     <span class="chip active" data-view="browse">All spots</span>
@@ -205,12 +205,19 @@ let spicyOnly=false;
 spicyChip.addEventListener('click',()=>{ spicyOnly=!spicyOnly; spicyChip.classList.toggle('on',spicyOnly); render(); });
 
 let view='browse';
+let browsePrice=null;   // remembers the budget cap while in the all-time view
+maxP.addEventListener('change',()=>{ if(view==='alltime') browsePrice=null; }); // user overrode it there
 document.getElementById('views').addEventListener('click',e=>{
   const c=e.target.closest('.chip'); if(!c) return;
   view=c.dataset.view;
   [...document.querySelectorAll('#views .chip')].forEach(x=>x.classList.toggle('active',x===c));
-  if(view==='alltime') sortSel.value='grank';
-  else if(sortSel.value==='grank') sortSel.value='dist';
+  if(view==='alltime'){
+    sortSel.value='grank';
+    if(maxP.value!=='9999'){ browsePrice=maxP.value; maxP.value='9999'; } // show the full podium
+  } else {
+    if(sortSel.value==='grank') sortSel.value='dist';
+    if(browsePrice!==null){ maxP.value=browsePrice; browsePrice=null; }   // restore budget cap
+  }
   render();
 });
 const locBtn=document.getElementById('loc');
