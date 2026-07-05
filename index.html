@@ -71,7 +71,7 @@
 </head>
 <body>
 <header>
-  <h1>Taipei Eats</h1>
+  <h1>Taipei Eats <span style="font-size:11px;font-weight:400;color:var(--sub)">v11 · Jul 5</span></h1>
   <div class="sub" id="subtitle">Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.</div>
   <div class="row" style="margin-bottom:8px" id="views">
     <span class="chip active" data-view="browse">All spots</span>
@@ -315,7 +315,15 @@ function render(){
     if(s==='grank') return (a.grank||9999)-(b.grank||9999) || b.rating-a.rating;
     if(s==='name') return a.name.localeCompare(b.name);
   });
-  countEl.textContent=(view==='alltime'?rows.length+' ranked':rows.length+' places')+(eaten.size?' · '+eaten.size+' eaten':'');
+  let countTxt;
+  if(view==='alltime'){
+    const seenAll=new Set(); let total=0;
+    DATA.forEach(d=>{ if(d.grank && !seenAll.has(d.zh)){ seenAll.add(d.zh); total++; } });
+    countTxt=rows.length+' of '+total+' ranked'+(rows.length<total?' ('+(total-rows.length)+' hidden by filters)':'');
+  } else {
+    countTxt=rows.length+' places';
+  }
+  countEl.textContent=countTxt+(eaten.size?' · '+eaten.size+' eaten':'');
   list.innerHTML=rows.map(d=>{
     const isV=eaten.has(vid(d));
     const rankBadge = view==='alltime'
