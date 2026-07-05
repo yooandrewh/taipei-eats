@@ -100,6 +100,7 @@
       <option value="rating">Sort: Highest rated</option>
       <option value="priceLow">Sort: Cheapest</option>
       <option value="listrank">Sort: List rank</option>
+      <option value="grank">Sort: All-time rank</option>
       <option value="name">Sort: A to Z</option>
     </select>
     <select id="cat">
@@ -208,6 +209,8 @@ document.getElementById('views').addEventListener('click',e=>{
   const c=e.target.closest('.chip'); if(!c) return;
   view=c.dataset.view;
   [...document.querySelectorAll('#views .chip')].forEach(x=>x.classList.toggle('active',x===c));
+  if(view==='alltime') sortSel.value='grank';
+  else if(sortSel.value==='grank') sortSel.value='dist';
   render();
 });
 const locBtn=document.getElementById('loc');
@@ -222,7 +225,10 @@ document.getElementById('types').addEventListener('click',e=>{
   [...document.querySelectorAll('#types .chip')].forEach(x=>x.classList.toggle('active',x===c));
   render();
 });
-[q,sortSel,maxP,minR,maxD,catSel,areaSel,openSel,statusSel].forEach(el=>el.addEventListener('input',render));
+[q,sortSel,maxP,minR,maxD,catSel,areaSel,openSel,statusSel].forEach(el=>{
+  el.addEventListener('input',render);
+  el.addEventListener('change',render);   // iOS Safari doesn't reliably fire 'input' on <select>
+});
 
 // ---- live location ----
 function haversine(a,b,c,d){
@@ -294,21 +300,21 @@ function render(){
   if(view==='alltime'){
     const seen=new Set();
     rows=rows.filter(d=>{ if(seen.has(d.zh)) return false; seen.add(d.zh); return true; });
-    rows.sort((a,b)=>a.grank-b.grank);
-    subtitle.textContent='All-time best — evidence-based: acclaim across guides, Reddit and Michelin, cross-referenced with Google rating weighted by review volume. Filters still apply.';
+    subtitle.textContent='All-time best — evidence-based: acclaim across guides, Reddit and Michelin, cross-referenced with Google rating weighted by review volume. Filters and sorting still apply.';
   } else {
-    const s=sortSel.value;
-    rows.sort((a,b)=>{
-      if(s==='dist'){ const av=userPos?a.live:a.dist, bv=userPos?b.live:b.dist; return av-bv; }
-      if(s==='rating') return b.rating-a.rating || (userPos?a.live-b.live:a.dist-b.dist);
-      if(s==='priceLow') return a.priceLow-b.priceLow || b.rating-a.rating;
-      if(s==='listrank') return a.rank-b.rank || b.rating-a.rating;
-      if(s==='name') return a.name.localeCompare(b.name);
-    });
     subtitle.textContent = userPos
       ? 'Sorted by how close each spot is to you right now. Distances are approximate straight-line.'
       : 'Ranked and sortable. Distances from your Gongguan apartment. Tap a card to open it in Google Maps.';
   }
+  const s=sortSel.value;
+  rows.sort((a,b)=>{
+    if(s==='dist'){ const av=userPos?a.live:a.dist, bv=userPos?b.live:b.dist; return av-bv; }
+    if(s==='rating') return b.rating-a.rating || (userPos?a.live-b.live:a.dist-b.dist);
+    if(s==='priceLow') return a.priceLow-b.priceLow || b.rating-a.rating;
+    if(s==='listrank') return a.rank-b.rank || b.rating-a.rating;
+    if(s==='grank') return a.grank-b.grank;
+    if(s==='name') return a.name.localeCompare(b.name);
+  });
   countEl.textContent=(view==='alltime'?rows.length+' ranked':rows.length+' places')+(eaten.size?' · '+eaten.size+' eaten':'');
   list.innerHTML=rows.map(d=>{
     const isV=eaten.has(vid(d));
