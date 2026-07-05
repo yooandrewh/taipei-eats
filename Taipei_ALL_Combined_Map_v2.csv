@@ -81,10 +81,8 @@ Food,Raohe Street Night Market,饒河街觀光夜市,Night Market,Songshan / MRT
 Food,Jin Da Lu Rou Fan,今大魯肉飯,Lu Rou Fan,New Taipei Sanchong / MRT Cailiao,60-120,4.3,43,44,6.57,MRT ~26 min,"Famous Sanchong lu rou fan. Cheap, big lines. Closed Thu. (New Taipei)"
 Food,Taiwan Fried Chicken HQ,台灣鹽酥雞大直創始總店,Fried Chicken,Zhongshan / MRT Dazhi,60-100,4.1,44,118,7.02,MRT ~28 min,"Founding salt-and-pepper chicken, boneless variant, open to 4am."
 Food,Tai Da Niu Zhuang,台大牛莊,Lu Rou Fan,Gongguan (Alley 4 Lane 286),60-90,4.2,45,178,0.01,0 min walk,"NEAR YOU (approx). Full lu rou fan meal NT$60 with egg, veg, soup."
-Food,Chan Chu Life Cuisine,饌竹,Bento / Taiwanese,Gongguan (Lane 283),60-120,4.2,46,186,0.07,1 min walk,"NEAR YOU. NTU student staple, meat bento, free soup and grass jelly."
+Food,Chan Chu Life Cuisine,饌竹,Bento / Taiwanese,Gongguan (Lane 283),60-120,4.2,46,184,0.07,1 min walk,"NEAR YOU. NTU student staple, meat bento, free soup and grass jelly."
 Food,Da Gou Mee Sua (Gongguan),大狗麵線 公館,Mee Sua,Gongguan / MRT Gongguan,50-80,4.2,47,165,0.5,9 min walk,NEAR YOU. Cheap intestine mee sua by the Gongguan bus stops.
-Food,NTU Female Dorm #9 Canteen,台大女九舍餐廳,Buffet (by weight),Gongguan (NTU campus),60-120,4.2,48,184,0.78,14 min walk,"NEAR YOU. Best-value NTU buffet, pay by weight. Weekdays only."
-Food,Huo Da NTU Canteen,活大餐廳,Canteen,Gongguan (NTU campus),50-100,4.2,49,185,0.84,15 min walk,"NEAR YOU. In-campus canteen, very cheap variety meals."
 Food,Ding Hao Zi Lin,頂好紫琳蒸餃館,Dumplings,Da'an / MRT Zhongxiao Fuxing,70-140,4.2,50,105,3.1,MRT ~12 min (or 54 min walk),"Steamed dumplings, potstickers, hot and sour soup. Best 3-6pm."
 Food,Taiwan Beef Noodles Chicken Soup,牛肉麵．雞湯,Beef Noodle,Da'an (Dunhua S Rd),180-250,4.2,51,106,3.29,MRT ~13 min,"Dinner only. Tomato broth, gelatinous chicken soup. Lucas Sin pick."
 Food,Shi Er Yue Congee,十二月粥品,Congee,Da'an / MRT Zhongxiao Dunhua,150-250,4.2,52,110,3.29,MRT ~13 min,"Congee, tea, home dishes. Comforting chicken congee. Open late."
@@ -101,18 +99,18 @@ Food,Gongguan Night Market,公館夜市,Night Market,Gongguan / MRT Gongguan,150
 Food,Yong He Soya Milk King,永和豆漿大王,Breakfast,Da'an / MRT Daan,60-100,4.2,63,77,1.74,MRT ~8 min (or 30 min walk),"Beloved breakfast, crispy youtiao, radish cake, creamy soy milk. Closed Mon."
 Food,Huang Mama Rice Noodle Soup,黃媽媽米粉湯,Rice Noodle,Da'an / MRT Dongmen,60-120,4.1,64,154,1.92,MRT ~8 min (or 33 min walk),Hidden gem in Dongmen Market. Cheap. Closed Mon.
 Food,Pin Xian Seafood (Re Chao),品鮮活魚快炒,Stir-fry (Re Chao),Da'an / MRT Technology Bldg,150-300,4.1,65,180,2.19,MRT ~9 min (or 38 min walk),"Lively late-night Taiwanese stir-fry, clams, kung pao chicken. To 1am."
-Food,Happy Dumpling (Dongfeng),東鋒餃子館,Dumplings,Da'an / MRT Daan,120-200,4.1,66,191,2.34,MRT ~9 min (or 41 min walk),"Creative dumpling combos, warm service. Closed Sun."
+Food,Happy Dumpling (Dongfeng),東鋒餃子館,Dumplings,Da'an / MRT Daan,120-200,4.1,66,189,2.34,MRT ~9 min (or 41 min walk),"Creative dumpling combos, warm service. Closed Sun."
 Food,Taiwan Crispy Chicken Tonghua,台灣鹹酥雞 通化,Fried Chicken,Da'an (Linjiang) / MRT Xinyi Anhe,60-100,4.1,67,152,2.63,MRT ~11 min (or 46 min walk),"Linjiang Night Market fried chicken, daily NT$10 special. Open late."
 Food,Linjiang (Tonghua) Night Market,臨江街觀光夜市,Night Market,Da'an / MRT Xinyi Anhe,150-250,4.1,68,70,2.63,MRT ~11 min (or 46 min walk),"Next to Taipei 101 area. 4 Bib Gourmand stalls, stinky tofu, tangyuan."
 Food,Famous Taiwanese Meatball,三兄弟肉圓,Ba Wan (Meatball),Da'an (Tonghua) / MRT Xinyi Anhe,50-90,4.1,69,179,2.71,MRT ~11 min (or 47 min walk),Iconic gelatinous ba wan and taro rice cake. Cheap comfort snack.
 Food,Fu Hang Soy Milk,阜杭豆漿,Breakfast,Zhongzheng / MRT Shandao Temple,60-100,4.1,70,18,3.0,MRT ~12 min (or 52 min walk),"Iconic breakfast. Long line, before 8am. Closed Mon."
 Food,1976 Cantonese Congee,1976道地香港美食,Congee / Cantonese,Da'an / MRT Zhongxiao Dunhua,150-250,4.1,71,135,3.09,MRT ~12 min (or 54 min walk),Authentic Cantonese congee and wonton noodles since childhood.
-Food,Braised Pork Rice (Gongyuan Rd),魯肉飯,Lu Rou Fan,Zhongzheng / MRT Ximen,50-100,4.1,72,192,3.41,MRT ~14 min,Back-alley hidden gem. Sticky rich lu rou fan. Closed Mon/Sun.
+Food,Braised Pork Rice (Gongyuan Rd),魯肉飯,Lu Rou Fan,Zhongzheng / MRT Ximen,50-100,4.1,72,190,3.41,MRT ~14 min,Back-alley hidden gem. Sticky rich lu rou fan. Closed Mon/Sun.
 Food,Popcorn Chicken King Ximen,台灣鹽酥雞 西門,Fried Chicken,Ximending / MRT Ximen,60-100,4.1,73,169,3.69,MRT ~15 min,"Big portions, fried fresh to order, tofu and squid too. Open late."
 Food,Ay-Chung Flour-Rice Noodle,阿宗麵線,Mee Sua,Ximending / MRT Ximen,60-80,4.0,74,49,3.72,MRT ~15 min,"Ximen icon, one dish. Stand and slurp. Cheap."
 Food,Tian Tian Li,天天利美食坊,Lu Rou Fan,Ximending / MRT Ximen,80-150,4.2,75,76,3.87,MRT ~15 min,Ximen classic. Lu rou fan with soft egg. Also oyster omelette. Closed Mon.
 Food,Gouqiang Mala Xiang Guo,夠嗆麻辣香鍋,Malatang,Ximending / MRT Ximen,100-180,4.1,76,170,4.0,MRT ~16 min,"Cheap pick-your-own Sichuan dry pot, duck blood soup, veg options."
-Food,Hou Jun Goose,後駿鵝肉店,Goose,Datong / MRT Taipei Main,120-220,4.1,77,190,4.03,MRT ~16 min,"Behind Taipei Main. Tender goose, good sauce, duck blood. Closed Wed/Sun."
+Food,Hou Jun Goose,後駿鵝肉店,Goose,Datong / MRT Taipei Main,120-220,4.1,77,188,4.03,MRT ~16 min,"Behind Taipei Main. Tender goose, good sauce, duck blood. Closed Wed/Sun."
 Food,Wang's Broth (Xiao Wang),小王煮瓜,Braised Pork Rice,Wanhua / MRT Longshan Temple,100-150,4.1,78,58,4.1,MRT ~16 min,Bib Gourmand. Dark braised pork. Closed Tue.
 Food,Pang Lao Ban Pork Congee,胖老闆誠意肉粥,Congee,Zhongshan / MRT Songjiang Nanjing,100-200,4.1,79,137,4.13,MRT ~17 min,Late-night meat congee and fried prawn cake. Opens 9pm. Closed Mon/Sun.
 Food,Chef Hung Beef Noodle,洪師父牛肉麵,Beef Noodle,Zhongshan / MRT Songjiang Nanjing,200-280,4.2,80,81,4.14,MRT ~17 min,Michelin. Rich broth. Some say slightly over-hyped.
@@ -130,12 +128,12 @@ Food,Yong Kang Beef Noodle,永康牛肉麵,Beef Noodle,Da'an / MRT Dongmen,250-3
 Food,Jin Feng Braised Pork Rice,金峰魯肉飯,Lu Rou Fan,Zhongzheng / MRT CKS Memorial,100-150,3.8,92,144,2.06,MRT ~8 min (or 36 min walk),"SLIPPING. Longtime fans say sauce lost its edge. Cheap, fast. Closed Mon."
 Food,Fuzhou Shizu Pepper Bun,福州世祖胡椒餅,Pepper Bun,Songshan (Raohe) / MRT Songshan,65,3.6,93,148,5.87,MRT ~23 min,"SLIPPING. Viral bun, hot and fresh, but reviewers say lacks depth."
 Food,A-Ying Braised Pork Rice,阿英滷肉飯,Lu Rou Fan,Gongguan (Wenzhou St),90,3.6,94,182,0.22,4 min walk,"NEAR YOU (approx). Biggest portion, Tainan-style sweet, fried egg."
-Food,Tian Jin Onion Pancake,天津蔥抓餅,Scallion Pancake,Da'an / MRT Dongmen,40-60,3.6,95,193,1.64,MRT ~8 min (or 28 min walk),SLIPPING + HYGIENE FLAG. Cheapest snack. Recent food-safety concerns.
-Food,Lai Ji Oyster Omelette,賴記雞蛋蚵仔煎,Oyster Omelette,Datong / MRT Daqiaotou,70-100,3.5,96,187,4.62,MRT ~18 min,SLIPPING. Fresh oysters but reviewers call it average. Closed Tue.
+Food,Tian Jin Onion Pancake,天津蔥抓餅,Scallion Pancake,Da'an / MRT Dongmen,40-60,3.6,95,191,1.64,MRT ~8 min (or 28 min walk),SLIPPING + HYGIENE FLAG. Cheapest snack. Recent food-safety concerns.
+Food,Lai Ji Oyster Omelette,賴記雞蛋蚵仔煎,Oyster Omelette,Datong / MRT Daqiaotou,70-100,3.5,96,185,4.62,MRT ~18 min,SLIPPING. Fresh oysters but reviewers call it average. Closed Tue.
 Food,Dongfahao (Raohe Mee Sua),東發號,Mee Sua,Songshan (Raohe) / MRT Songshan,60-100,3.8,97,172,5.63,MRT ~23 min,"SLIPPING. Bib Gourmand oyster/intestine mee sua, but reviews mixed."
-Food,Hot-Star Large Fried Chicken,豪大大雞排,Fried Chicken,Shilin / MRT Jiantan,95,3.4,98,188,7.83,MRT ~31 min,"SLIPPING. Bigger-than-face cutlet, huge and cheap, but inconsistent."
-Food,Liu's Pan-Fried Buns,劉家水煎包,Pan-fried Buns,Gongguan (Tingzhou Rd),19-60,3.4,99,189,0.4,7 min walk,NEAR YOU. NT$19 pork/cabbage/chive buns. Cheap but rating has dipped.
-Food,Gongguan Mee Sua Shop,公館麵線店,Mee Sua / Stinky Tofu,Gongguan / MRT Gongguan,50-90,3.4,100,194,0.7,12 min walk,NEAR YOU. Old-name stinky tofu and intestine mee sua. Rating slipped.
+Food,Hot-Star Large Fried Chicken,豪大大雞排,Fried Chicken,Shilin / MRT Jiantan,95,3.4,98,186,7.83,MRT ~31 min,"SLIPPING. Bigger-than-face cutlet, huge and cheap, but inconsistent."
+Food,Liu's Pan-Fried Buns,劉家水煎包,Pan-fried Buns,Gongguan (Tingzhou Rd),19-60,3.4,99,187,0.4,7 min walk,NEAR YOU. NT$19 pork/cabbage/chive buns. Cheap but rating has dipped.
+Food,Gongguan Mee Sua Shop,公館麵線店,Mee Sua / Stinky Tofu,Gongguan / MRT Gongguan,50-90,3.4,100,192,0.7,12 min walk,NEAR YOU. Old-name stinky tofu and intestine mee sua. Rating slipped.
 Food,Yi Jia Zi,一甲子餐飲,Kong Rou Fan / Gua Bao,Wanhua / MRT Longshan Temple,60-150,4.4,101,4,4.06,MRT ~16 min,"NEW. Bib Gourmand every year since 2020; 60-year braised pork belly rice and gua bao by Qingshui Temple. 09:00-19:00, Sat to 14:00. Closed Sun."
 Food,Shuang Yue Food,雙月食品社,Herbal Chicken Soup,Zhongzheng / MRT Shandao Temple,150-300,4.5,102,5,3.38,MRT ~13 min,"NEW. 7-yr Bib Gourmand herbal chicken soup; even Morris Chang eats here (Michelin). 11:00-14:00, 17:00-20:00."
 Food,Jin Yuan Pork Chop,金園排骨 萬年店,Pork Chop Rice,Ximending / MRT Ximen,110-160,4.4,103,20,3.94,MRT ~15 min,"NEW. Since 1973 in Wannian basement; Taipei's benchmark fried pork chop, free rice/soup refills (DanielFoodDiary). 11:00-21:00."
@@ -202,7 +200,7 @@ Noodles,Lao Shandong Homemade Noodles,老山東牛肉家常麵,Beef Noodle,Ximen
 Noodles,Lin Dong Fang Beef Noodle,林東芳牛肉麵,Beef Noodle,Zhongshan / MRT Zhongxiao Fuxing,200-260,3.9,26,88,3.44,MRT ~14 min,"SLIPPING. Once Reddit-famous, mixed recent reviews. Open to 3am."
 Noodles,Yong Kang Beef Noodle,永康牛肉麵,Beef Noodle,Da'an / MRT Dongmen,250-320,3.8,27,112,1.7,MRT ~8 min (or 29 min walk),SLIPPING + PRICEY. Famous name but reviews say not the best. Slightly over NT$300.
 Noodles,Dongfahao (Raohe Mee Sua),東發號,Mee Sua,Songshan (Raohe) / MRT Songshan,60-100,3.8,28,172,5.63,MRT ~23 min,"SLIPPING. Bib Gourmand oyster/intestine mee sua, but reviews mixed."
-Noodles,Gongguan Mee Sua Shop,公館麵線店,Mee Sua / Stinky Tofu,Gongguan / MRT Gongguan,50-90,3.4,29,194,0.7,12 min walk,NEAR YOU. Old-name stinky tofu and intestine mee sua. Rating slipped.
+Noodles,Gongguan Mee Sua Shop,公館麵線店,Mee Sua / Stinky Tofu,Gongguan / MRT Gongguan,50-90,3.4,29,192,0.7,12 min walk,NEAR YOU. Old-name stinky tofu and intestine mee sua. Rating slipped.
 Noodles,Niu Dian Beef Noodles,牛店精燉牛肉麵,Beef Noodle,Ximending / MRT Ximen,180-300,4.3,30,10,3.94,MRT ~15 min,"NEW. Bib Gourmand 3 straight years; hotel-chef 24-hour broth; Ximending must-eat (DanielFoodDiary, Taiwan Obsessed). 11:30-14:30, 17:00-19:30. Closed Mon."
 Noodles,Lin Jia Dry Noodles,林家乾麵,Dry Noodles,Zhongzheng (Quanzhou St) / MRT CKS Memorial,37-90,4.3,31,11,2.46,MRT ~10 min,"NEW. 60-yr shop selling only lard-scallion dry noodles (NT$37) + fishball soup; 2025 Bib Gourmand. 06:00-14:00, 16:30-19:30. Closed Mon."
 Noodles,Liao Beef Noodle,廖家牛肉麵,Beef Noodle,Da'an (Jinhua St) / MRT Dongmen,150-250,4.2,32,22,2.05,MRT ~8 min,"NEW. Bib Gourmand 2018-19; 40-year clear-broth master; lunch-only queue institution (DanielFoodDiary, Michelin). 10:00-14:00 lunch only. Closed Mon."
